@@ -110,10 +110,18 @@ export const Hero: React.FC<HeroProps> = ({ onOpenAdmissionModal }) => {
               
               {/* Main Image */}
               <img
-                src="/src/assets/images/hero_school_campus_learning_1794229427042.jpg"
+                src="/images/hero-school-campus.jpg"
                 alt="Interactive classroom environment at Achievers Grammar School & Academy"
                 className="w-full h-[380px] sm:h-[460px] lg:h-[490px] object-cover object-center group-hover:scale-102 transition-transform duration-700"
                 referrerPolicy="no-referrer"
+                loading="eager"
+                onError={(e) => {
+                  const target = e.currentTarget as HTMLImageElement;
+                  if (!target.dataset.triedFallback) {
+                    target.dataset.triedFallback = 'true';
+                    target.src = '/images/hero-school-campus.jpg';
+                  }
+                }}
               />
 
               {/* Gradient Scrim for Contrast */}

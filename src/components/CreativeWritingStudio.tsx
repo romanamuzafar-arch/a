@@ -25,28 +25,28 @@ const SAMPLE_SCENES = [
     id: 'sample-1',
     name: 'Ancient Sunlit Library',
     genre: 'Magical Realism',
-    url: '/src/assets/images/school_library_reading_hall_1794229427440.jpg',
+    url: '/images/school-library-hall.jpg',
     description: 'Cathedral ceilings, towering mahogany shelves, drifting dust motes.'
   },
   {
     id: 'sample-2',
     name: 'Alchemical Laboratory',
     genre: 'Gothic Science',
-    url: '/src/assets/images/school_science_laboratory_1794229426217.jpg',
+    url: '/images/school-science-lab.jpg',
     description: 'Glass retorts, azure solutions, cold stainless steel surfaces.'
   },
   {
     id: 'sample-3',
     name: 'Morning Assembly Hall',
     genre: 'Literary Drama',
-    url: '/src/assets/images/hero_school_campus_learning_1794229427042.jpg',
+    url: '/images/hero-school-campus.jpg',
     description: 'Sunlight streaming through tall glass, murmuring crowd, waiting silence.'
   },
   {
     id: 'sample-4',
     name: 'Cybernetic Workshop',
     genre: 'Cyberpunk Noir',
-    url: '/src/assets/images/school_computer_technology_lab_1794229428263.jpg',
+    url: '/images/school-computer-lab.jpg',
     description: 'Glowing phosphor screens, entangled cabling, quiet algorithmic hum.'
   }
 ];
@@ -416,6 +416,9 @@ export const CreativeWritingStudio: React.FC = () => {
                   src={selectedImage}
                   alt="Story inspiration scene"
                   className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500"
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).src = '/images/school-library-hall.jpg';
+                  }}
                 />
                 
                 {/* Overlay Badge */}

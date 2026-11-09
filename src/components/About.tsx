@@ -33,10 +33,18 @@ export const About: React.FC<AboutProps> = ({ onOpenAdmissionModal }) => {
           <div className="lg:col-span-6 relative">
             <div className="relative rounded-2xl overflow-hidden shadow-xl border border-slate-200">
               <img
-                src="/src/assets/images/school_library_reading_hall_1794229427440.jpg"
+                src="/images/school-library-hall.jpg"
                 alt="Students studying in library hall at Achievers Grammar School"
                 className="w-full h-[400px] object-cover"
                 referrerPolicy="no-referrer"
+                loading="lazy"
+                onError={(e) => {
+                  const target = e.currentTarget as HTMLImageElement;
+                  if (!target.dataset.triedFallback) {
+                    target.dataset.triedFallback = 'true';
+                    target.src = '/images/school-library-hall.jpg';
+                  }
+                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0f244a]/85 via-transparent to-transparent flex items-end p-6">
                 <div className="text-white">

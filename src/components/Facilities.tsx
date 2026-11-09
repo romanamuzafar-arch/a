@@ -49,9 +49,13 @@ export const Facilities: React.FC = () => {
               <div className="relative h-52 overflow-hidden bg-slate-900">
                 <img
                   src={fac.image}
-                  alt={fac.title}
+                  alt={`${fac.title} - Achievers Grammar School campus facility`}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   referrerPolicy="no-referrer"
+                  loading="lazy"
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).src = '/images/hero-school-campus.jpg';
+                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none" />
                 

@@ -37,9 +37,13 @@ export const Academics: React.FC<AcademicsProps> = ({ onSelectProgramForAdmissio
               <div className="relative h-56 overflow-hidden bg-slate-900">
                 <img
                   src={program.image}
-                  alt={program.title}
+                  alt={`${program.title} at Achievers Grammar School & Academy`}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   referrerPolicy="no-referrer"
+                  loading="lazy"
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).src = '/images/hero-school-campus.jpg';
+                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent pointer-events-none" />
                 
@@ -125,9 +129,12 @@ export const Academics: React.FC<AcademicsProps> = ({ onSelectProgramForAdmissio
             <div className="relative h-56 bg-slate-900">
               <img
                 src={selectedProgram.image}
-                alt={selectedProgram.title}
+                alt={`${selectedProgram.title} details`}
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
+                onError={(e) => {
+                  (e.currentTarget as HTMLImageElement).src = '/images/hero-school-campus.jpg';
+                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0f244a] via-black/40 to-transparent" />
               

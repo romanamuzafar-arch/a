@@ -83,10 +83,13 @@ export const Gallery: React.FC = () => {
             >
               <img
                 src={item.image}
-                alt={item.title}
+                alt={`${item.title} - ${item.category} at Achievers Grammar School`}
                 loading="lazy"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 referrerPolicy="no-referrer"
+                onError={(e) => {
+                  (e.currentTarget as HTMLImageElement).src = '/images/hero-school-campus.jpg';
+                }}
               />
               
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4 text-white">
@@ -151,9 +154,12 @@ export const Gallery: React.FC = () => {
             <div className="relative max-h-[75vh] rounded-xl overflow-hidden shadow-2xl border border-white/20 bg-black">
               <img
                 src={filteredItems[lightboxIndex].image}
-                alt={filteredItems[lightboxIndex].title}
+                alt={`${filteredItems[lightboxIndex].title} - Full Preview`}
                 className="max-h-[75vh] w-auto object-contain mx-auto"
                 referrerPolicy="no-referrer"
+                onError={(e) => {
+                  (e.currentTarget as HTMLImageElement).src = '/images/hero-school-campus.jpg';
+                }}
               />
             </div>
             

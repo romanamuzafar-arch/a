@@ -143,6 +143,23 @@ export const HostingerGuideModal: React.FC<HostingerGuideModalProps> = ({ isOpen
             </div>
           </div>
 
+          {/* Step 5: Netlify Deployment */}
+          <div className="bg-emerald-50/70 p-5 rounded-2xl border border-emerald-200 space-y-3">
+            <div className="flex items-center gap-2 font-bold text-emerald-950">
+              <Globe className="w-4 h-4 text-emerald-700" />
+              <h4>5. Deploying to Netlify (Continuous Deployment & Drag-and-Drop)</h4>
+            </div>
+            <p className="text-xs text-emerald-900">
+              All images are placed in <code className="font-mono bg-white px-1.5 py-0.5 rounded border">public/images/</code> and automatically bundled into <code className="font-mono bg-white px-1.5 py-0.5 rounded border">dist/images/</code> on build:
+            </p>
+            <ul className="text-xs space-y-1.5 list-disc list-inside text-emerald-900">
+              <li><strong>Build Command:</strong> <code className="font-mono bg-white px-1.5 py-0.5 rounded">npm run build</code></li>
+              <li><strong>Publish Directory:</strong> <code className="font-mono bg-white px-1.5 py-0.5 rounded">dist</code></li>
+              <li><strong>SPA Redirects:</strong> Configured in <code className="font-mono bg-white px-1.5 py-0.5 rounded">public/_redirects</code> and <code className="font-mono bg-white px-1.5 py-0.5 rounded">netlify.toml</code>.</li>
+              <li><strong>Image Paths:</strong> Canonical paths like <code className="font-mono bg-white px-1.5 py-0.5 rounded">/images/hero-school-campus.jpg</code> work seamlessly in both local and production environments.</li>
+            </ul>
+          </div>
+
           {/* Step 5: Updating School Content */}
           <div className="p-4 rounded-xl bg-amber-50 border border-amber-200 text-amber-950 text-xs space-y-1">
             <p className="font-bold">How to Edit School Content Anytime:</p>
